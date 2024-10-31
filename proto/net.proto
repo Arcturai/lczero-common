@@ -114,6 +114,8 @@ message Weights {
     optional Layer ip3_pol_w = 5;  // "wk" in policy attention
     optional Layer ip3_pol_b = 6;
     optional Layer ip4_pol_w = 7;  // "ppo" in policy attention
+    optional Layer ip5_pol_w = 12; // "hs" in policy multi-head attention
+    optional uint32 pol_mha_headcount = 13;
 
     // Optional policy encoders for policy head.
     repeated EncoderLayer pol_encoder = 8;
@@ -220,6 +222,8 @@ message Weights {
   optional Layer ip3_pol_w = 19;  // "wk" in policy attention
   optional Layer ip3_pol_b = 20;
   optional Layer ip4_pol_w = 22;  // "ppo" in policy attention
+  optional Layer ip5_pol_w = 46;  // "hs" in policy multi-head attention
+  optional uint32 pol_mha_headcount = 47;
 
   // Value head
   optional ConvBlock value = 6;
